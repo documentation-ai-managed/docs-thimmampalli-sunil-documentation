@@ -1,0 +1,103 @@
+---
+title: Authentication
+description: Secure access and authorization methods for Thimmampalli Sunil Documentation
+---
+
+## Authentication Overview
+
+Authentication is the foundation of secure access to your documentation resources. Thimmampalli Sunil Documentation supports multiple authentication methods to ensure flexibility for different use cases, from individual developers to enterprise teams. Understanding these methods will help you implement proper security measures.
+
+<Tabs>
+  <Tab title="API Keys" icon="key">
+    Use API keys for programmatic access to documentation endpoints.
+    
+    <Steps>
+      <Step title="Generate Key" icon="plus">
+        Navigate to the settings page and select "API Keys" to create a new key.
+      </Step>
+      <Step title="Configure Permissions" icon="settings">
+        Assign appropriate permissions such as read, write, or admin access.
+      </Step>
+      <Step title="Use in Requests" icon="send">
+        Include the key in your API request headers using the Authorization field.
+      </Step>
+    </Steps>
+  </Tab>
+  <Tab title="OAuth 2.0" icon="lock">
+    Implement OAuth 2.0 for secure third-party integrations.
+    
+    <CodeGroup tabs="curl,Python">
+      ````bash
+curl -X POST https://api.thimmampalli-sunil.com/oauth/token \
+  -d grant_type=authorization_code \
+  -d code=YOUR_AUTH_CODE \
+  -d redirect_uri=YOUR_REDIRECT_URI \
+  -d client_id=YOUR_CLIENT_ID \
+  -d client_secret=YOUR_CLIENT_SECRET
+````
+      ````python
+import requests
+
+data = {
+    'grant_type': 'authorization_code',
+    'code': 'YOUR_AUTH_CODE',
+    'redirect_uri': 'YOUR_REDIRECT_URI',
+    'client_id': 'YOUR_CLIENT_ID',
+    'client_secret': 'YOUR_CLIENT_SECRET'
+}
+response = requests.post('https://api.thimmampalli-sunil.com/oauth/token', data=data)
+token = response.json()
+````
+    </CodeGroup>
+  </Tab>
+</Tabs>
+
+<Expandable title="Token Refresh" default-open="false">
+  When your access token expires, use the refresh token to obtain a new one without requiring user re-authentication. This process maintains session continuity and improves user experience.
+</Expandable>
+
+<Callout kind="danger">
+  Always store API keys and tokens securely. Never expose them in public repositories or client-side code.
+</Callout>
+
+## User Roles and Permissions
+
+The platform supports different user roles with varying levels of access. Administrators can manage projects and users, while contributors can edit documentation and viewers have read-only access.
+
+| Role          | Permissions                  |
+|---------------|------------------------------|
+| Administrator | Full access, user management |
+| Contributor   | Edit and publish documents   |
+| Viewer        | Read-only access             |
+
+<ExpandableGroup>
+  <Expandable title="Admin Permissions" default-open="true">
+    Administrators can create and delete projects, manage user accounts, and configure system settings. They have unrestricted access to all documentation resources.
+  </Expandable>
+  <Expandable title="Contributor Workflow" default-open="false">
+    Contributors can create new documentation pages, edit existing content, and publish changes. They cannot modify user accounts or system configurations.
+  </Expandable>
+  <Expandable title="Viewer Access" default-open="false">
+    Viewers can browse and search documentation but cannot make any modifications. This role is ideal for external stakeholders or auditors.
+  </Expandable>
+</ExpandableGroup>
+
+## Security Best Practices
+
+Implementing proper security measures is crucial for protecting your documentation. Use strong passwords, enable two-factor authentication when available, and regularly rotate API keys.
+
+<Steps>
+  <Step title="Enable 2FA" icon="shield">
+    Activate two-factor authentication in your account settings for additional security.
+  </Step>
+  <Step title="Monitor Access" icon="eye">
+    Regularly review access logs to identify any suspicious activity.
+  </Step>
+  <Step title="Secure Keys" icon="lock">
+    Store API keys in environment variables or secure vaults, never in code.
+  </Step>
+</Steps>
+
+<Callout kind="tip">
+  For enterprise deployments, consider implementing SSO integration for centralized user management and enhanced security.
+</Callout>

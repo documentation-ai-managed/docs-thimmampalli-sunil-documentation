@@ -1,0 +1,86 @@
+---
+title: Introduction
+description: Overview of Thimmampalli Sunil Documentation and its core capabilities
+---
+
+## Getting Started
+
+Thimmampalli Sunil Documentation provides a streamlined solution for managing project documentation with ease. Whether you're building APIs, integrating services, or tracking changes, this platform offers comprehensive tools to keep your documentation organized and accessible. This guide will walk you through the fundamental concepts and help you get started quickly.
+
+<Columns cols={3}>
+  <Card title="Authentication" icon="key" href="authentication">
+    Learn how to securely authenticate and authorize access to your documentation resources.
+  </Card>
+  <Card title="Configuration" icon="settings" href="configuration">
+    Configure your project settings and customize the documentation experience.
+  </Card>
+  <Card title="Usage" icon="terminal" href="usage">
+    Discover practical examples and best practices for using the documentation platform.
+  </Card>
+</Columns>
+
+## Core Features
+
+The platform includes several key features designed to enhance your documentation workflow. It supports real-time collaboration, version control, and seamless integration with popular development tools. You can create, edit, and manage documentation pages using a simple markdown-based interface.
+
+<Tabs>
+  <Tab title="Web Interface" icon="monitor">
+    Access your documentation through an intuitive web dashboard with drag-and-drop functionality.
+    
+    <Steps>
+      <Step title="Sign Up" icon="user-plus">
+        Create an account by visiting the registration page and providing your email and password.
+      </Step>
+      <Step title="Verify Email" icon="mail">
+        Check your inbox for a verification link and click to activate your account.
+      </Step>
+      <Step title="Create Project" icon="folder-plus">
+        Navigate to the projects section and select "New Project" to set up your documentation workspace.
+      </Step>
+    </Steps>
+  </Tab>
+  <Tab title="API Integration" icon="code">
+    Integrate with your existing systems using RESTful APIs and webhooks.
+    
+    <CodeGroup tabs="JavaScript,Python">
+      ````javascript
+const response = await fetch('/api/projects', {
+  method: 'GET',
+  headers: {
+    'Authorization': 'Bearer YOUR_TOKEN'
+  }
+});
+const projects = await response.json();
+````
+      ````python
+import requests
+
+response = requests.get('/api/projects', headers={
+    'Authorization': 'Bearer YOUR_TOKEN'
+})
+projects = response.json()
+````
+    </CodeGroup>
+  </Tab>
+</Tabs>
+
+<Expandable title="Advanced Setup Options" default-open="false">
+  For users requiring more customization, advanced setup options are available. These include custom domain mapping, SSO integration, and API rate limiting configuration. Consult the configuration guide for detailed instructions on implementing these features.
+</Expandable>
+
+<Callout kind="info">
+  If you encounter any issues during setup, refer to the troubleshooting section in the usage guide or contact support.
+</Callout>
+
+## Next Steps
+
+Now that you have an overview of the platform, dive deeper into specific areas using the links below. Start with authentication to secure your account, then move on to configuration and usage examples to fully leverage the documentation capabilities.
+
+<Columns cols={2}>
+  <Card title="Authentication Guide" icon="shield" href="authentication">
+    Secure your documentation access.
+  </Card>
+  <Card title="Configuration Options" icon="cog" href="configuration">
+    Customize your setup.
+  </Card>
+</Columns>

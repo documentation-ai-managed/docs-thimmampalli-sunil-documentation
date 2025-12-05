@@ -1,0 +1,122 @@
+---
+title: Configuration
+description: Customize and configure Thimmampalli Sunil Documentation settings
+---
+
+## Configuration Basics
+
+Configuring your Thimmampalli Sunil Documentation instance allows you to tailor the platform to your specific needs. From project settings to user preferences, understanding the configuration options will help you optimize your documentation workflow.
+
+<Columns cols={2}>
+  <Card title="Project Settings" icon="folder" href="#project-settings">
+    Manage project-specific configurations like visibility and collaboration options.
+  </Card>
+  <Card title="User Preferences" icon="user" href="#user-preferences">
+    Customize your personal experience with themes and notifications.
+  </Card>
+</Columns>
+
+## Project Settings
+
+Each project in Thimmampalli Sunil Documentation has its own configuration options. You can set project visibility, enable collaboration features, and define custom workflows.
+
+<Tabs>
+  <Tab title="General" icon="settings">
+    Basic project information and access controls.
+    
+    <Steps>
+      <Step title="Project Name" icon="edit">
+        Enter a descriptive name for your documentation project.
+      </Step>
+      <Step title="Visibility" icon="eye">
+        Choose between public, private, or team-only access.
+      </Step>
+      <Step title="Description" icon="file-text">
+        Add a brief description of the project's purpose.
+      </Step>
+    </Steps>
+  </Tab>
+  <Tab title="Collaboration" icon="users">
+    Configure team collaboration features.
+    
+    <CodeGroup tabs="JSON,YAML">
+      ````json
+{
+  "collaboration": {
+    "enabled": true,
+    "realTimeEditing": true,
+    "commenting": true,
+    "versionControl": "git"
+  }
+}
+````
+      ````yaml
+collaboration:
+  enabled: true
+  realTimeEditing: true
+  commenting: true
+  versionControl: git
+````
+    </CodeGroup>
+  </Tab>
+</Tabs>
+
+<Expandable title="Advanced Options" default-open="false">
+  For power users, advanced configuration options include custom webhooks, API rate limiting, and integration settings. These features require careful setup to avoid disrupting your workflow.
+</Expandable>
+
+<Callout kind="info">
+  Changes to project settings may take a few minutes to propagate across all documentation pages.
+</Callout>
+
+## User Preferences
+
+Personalize your documentation experience with user preferences. Customize themes, notification settings, and interface options to match your workflow.
+
+<Steps>
+  <Step title="Theme Selection" icon="sun">
+    Choose between light, dark, or auto themes based on your preference.
+  </Step>
+  <Step title="Notifications" icon="bell">
+    Configure email and in-app notifications for project updates and mentions.
+  </Step>
+  <Step title="Editor Settings" icon="edit">
+    Customize the markdown editor with syntax highlighting and auto-save options.
+  </Step>
+</Steps>
+
+| Setting          | Options                  | Description                     |
+|------------------|--------------------------|---------------------------------|
+| Theme            | Light, Dark, Auto       | Interface color scheme          |
+| Notifications    | Email, In-app, Both     | Update notification preferences |
+| Auto-save        | Enabled, Disabled       | Automatic document saving       |
+| Syntax Highlight | Enabled, Disabled       | Code syntax highlighting        |
+
+<ExpandableGroup>
+  <Expandable title="Theme Customization" default-open="true">
+    The theme selector affects the entire documentation interface. Light mode is ideal for bright environments, while dark mode reduces eye strain during extended use.
+  </Expandable>
+  <Expandable title="Notification Management" default-open="false">
+    Control how and when you receive updates about project changes. You can disable notifications for specific projects or set quiet hours.
+  </Expandable>
+</ExpandableGroup>
+
+<Callout kind="tip">
+  Use the auto theme option to automatically switch between light and dark modes based on your system preferences.
+</Callout>
+
+## Integration Configuration
+
+Connect Thimmampalli Sunil Documentation with external tools and services. Supported integrations include version control systems, CI/CD pipelines, and communication platforms.
+
+<Columns cols={3}>
+  <Card title="Git Integration" icon="git-branch" href="#git-integration">
+    Sync documentation with Git repositories.
+  </Card>
+  <Card title="Slack Integration" icon="message-square" href="#slack-integration">
+    Receive notifications in Slack channels.
+  </Card>
+  <Card title="Webhook Setup" icon="webhook" href="#webhook-setup">
+    Configure custom webhooks for automation.
+  </Card>
+</Columns>
